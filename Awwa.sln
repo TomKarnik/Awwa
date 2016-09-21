@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwwaWeb", "AwwaWeb\AwwaWeb.csproj", "{4267AFA8-9066-41DA-8734-7EF2EDFE5D3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwwaWeb.Tests", "AwwaWeb.Tests\AwwaWeb.Tests.csproj", "{DE16BCF3-DDA7-4D60-A564-C701F7B0E187}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4267AFA8-9066-41DA-8734-7EF2EDFE5D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4267AFA8-9066-41DA-8734-7EF2EDFE5D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4267AFA8-9066-41DA-8734-7EF2EDFE5D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4267AFA8-9066-41DA-8734-7EF2EDFE5D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE16BCF3-DDA7-4D60-A564-C701F7B0E187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE16BCF3-DDA7-4D60-A564-C701F7B0E187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE16BCF3-DDA7-4D60-A564-C701F7B0E187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE16BCF3-DDA7-4D60-A564-C701F7B0E187}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
