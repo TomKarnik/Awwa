@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -45,6 +46,7 @@ namespace AwwaWeb.Controllers
         {
             if (ModelState.IsValid)
             {
+                aspNetRole.Id = Guid.NewGuid().ToString();
                 db.AspNetRoles.Add(aspNetRole);
                 db.SaveChanges();
                 return RedirectToAction("Index");

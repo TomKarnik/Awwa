@@ -17,9 +17,12 @@ namespace AwwaWeb.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        ApplicationDbContext _appDbContext;
 
         public AccountController()
         {
+            // Create an application DB context object
+            _appDbContext = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,6 +142,8 @@ namespace AwwaWeb.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            // Capture list of user roles
+            ViewBag.RoleName = new SelectList(_appDbContext.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -155,7 +160,13 @@ namespace AwwaWeb.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    // Assign Role to user Here 
+                    await this.UserManager.AddToRoleAsync(user.Id, model.RoleName);
+
+                    if (model.RoleName != "Administrator")
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    }
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
