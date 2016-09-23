@@ -20,7 +20,6 @@ namespace AwwaWeb.Controllers
             return View();
         }
 
-        [Authorize(Roles="Administrator")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
